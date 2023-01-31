@@ -36,9 +36,8 @@ endef
 
 define Package/musl-libc/install
 	$(INSTALL_DIR) $(1)/lib
-	$(CP) $(PKG_BUILD_DIR)/lib/libc.so $(1)/lib/libc.so
-    $(LN) -sf libc.so $(1)/lib/libc.musl-$(ARCH).so.1
-	$(LN) -sf libc.so $(1)/lib/ld-musl-$(ARCH).so.1
+	$(CP) $(PKG_BUILD_DIR)/lib/libc.so $(1)/lib/ld-musl-$(ARCH).so.1
+	$(LN) -sf ld-musl-$(ARCH).so.1 $(1)/lib/libc.musl-$(ARCH).so.1
 endef
 
 $(eval $(call BuildPackage,musl-libc))
