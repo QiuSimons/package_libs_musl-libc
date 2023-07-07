@@ -16,6 +16,7 @@ PKG_SOURCE_URL:=https://musl.libc.org/releases/
 PKG_HASH:=7a35eae33d5372a7c0da1188de798726f68825513b7ae3ebe97aaaa52114f039
 
 PKG_BUILD_DIR:=$(BUILD_DIR)/musl-$(PKG_VERSION)
+PKG_BUILD_FLAGS:=no-lto
 
 include $(INCLUDE_DIR)/package.mk
 
